@@ -1,6 +1,8 @@
 import React, {useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Collection } from '../models/Collection';
+import { ItemListIndv } from './ItemListIndv';
+
 
 interface CollectionCardProps {
     collection: Collection; // defining the interface of collection prop
@@ -18,6 +20,7 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({collection}) => {
     return (
         <>
         <div className = "collection-card">
+            <ItemListIndv collectionId={collection.id} />
             <h2 className = "collection-card-header">{collection.name}</h2>
             <p>{collection.description}</p>
             <p>Created by: {collection.userId}</p>

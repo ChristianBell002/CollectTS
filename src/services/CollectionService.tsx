@@ -1,14 +1,14 @@
+import axios from 'axios';
 const API_URL = import.meta.env.VITE_API_URL;
 //---------------------------------CollectionServices--------------------------------
 export const fetchCollections = async () => { // 
     try {
         // const response = await fetch(`${API_URL}/api/collections`);
-        const response = await fetch(`${API_URL}/collections`);
-        if (!response.ok) {
+        const response = await axios.get(`${API_URL}/collections`);
+        if (!response.status === true) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        return data;
+        return response.data;
     }
     catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -20,12 +20,11 @@ export const fetchCollections = async () => { //
 //---------------------------------CollectionTypeServices----------------------------
 export const fetchCollectionTypes = async () => {
     try {
-        const response = await fetch(`${API_URL}/api/collectiontypes`);
-        if (!response.ok) {
+        const response = await axios.get(`${API_URL}/api/collectiontypes`);
+        if (!response.status === true) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        return data;
+        return response.data;
     }
     catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -38,12 +37,11 @@ export const fetchCollectionTypes = async () => {
 export const fetchItems = async () => {
     try {
         //const response = await fetch(`${API_URL}/api/items`);
-        const response = await fetch(`${API_URL}/items`);
-        if (!response.ok) {
+        const response = await axios.get(`${API_URL}/items`);
+        if (!response.status === true) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        return data;
+        return response.data;
     }
     catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -54,12 +52,11 @@ export const fetchItems = async () => {
 export const fetchItemsByCollectionId = async (collectionId: number) => {
     try {
         //const response = await fetch(`${API_URL}/collection/${collectionId}`);
-        const response = await fetch(`${API_URL}/collections/${collectionId}`);
-        if (!response.ok) {
+        const response = await axios.get(`${API_URL}/items?collectionId=${collectionId})`);
+        if (!response.status === true) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        return data.items;
+        return response.data;
     }
     catch (error) {
         console.error('There was a problem with the fetch operation:', error);

@@ -4,22 +4,23 @@ import { fetchItems, fetchItemsByCollectionId } from '../services/CollectionServ
 //import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'; 
 import  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
+import type { Item } from '../models/Item'; // Assuming you have an Item model defined
 
-interface ItemListProps {
-    
+interface ItemListProps { 
     collectionId: number; // The ID of the collection to fetch items for
 }
 
-export function ItemList ()  {
-    const {collectionId} = useParams(); // Get the collection ID from the URL parameters
-    const [items, setItems] = useState([]);
+
+export function ItemListIndv (props: ItemListProps)  {
+    
+    const [items, setItems] = useState<Item[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const getItems = async () => {
             //console.log("Fetching items for collection ID:", props.collectionId);
             //const data = await fetchItemsByCollectionId(parseInt(id || '') || 1); // Fetch items for the specified collection ID
-            const data = await fetchItemsByCollectionId(collectionId ? parseInt(collectionId) : 1); // Fetch items for the specified collection ID
+            const data = await fetchItemsByCollectionId(props.collectionId ?? 0); // Fetch items for the specified collection ID
             console.log("Fetched items:", data);
             if (data) {
                 setItems(data);
@@ -29,27 +30,20 @@ export function ItemList ()  {
         };
         
         getItems();
-    }, [collectionId]);
+    }, []);
+// pull up list of things we need to do for the front end.
+// verify my github on this machine. 
 
     return (
-        <>
-        
-        <h1 className = "item-header">Item List
-            <button className = "add-button">Add</button>
-        </h1>
-        
-            <div className="item-list-container">
-                <div className = "item-list">
-                    {items.length > 0 ? (
-                        items.map((item) => (
-                        <ItemCard item={item} />  
-                        ))
-                    ) : (
-                        <p>No items available</p>
-                    )}
-                    {error && <p className="error-message">{error}</p>}                    
-                </div>
-            </div>
-        </>
+        <> 
+
+        {items && items.length > 0 && (
+                <p>Items List:</p>
+                {items.map((item) =>
+                   <span key = {item.id}>{item.name}</span>
+        )}
+        )}       
+                    
+        </>           
     );
 }
