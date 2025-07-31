@@ -1,3 +1,37 @@
+Current Issues that need to be resolved. To be added later into GitHub issues:
+
+Frontend
+----------------------------------------------------------------------
+-Favorites button (Function)
+
+-Search/filter (Function)
+
+-Images for each collection and item. (Aesthetic)
+
+-Recently Visited Collections (Function)
+
+-Hidden Collections (Function)
+
+-Dark mode (Function and Aesthetic)
+
+-Account Settings Page (UX probably both function and aesthetic)
+
+-Comments under collections/items by friends (UX Function)
+
+-Public/Private Accounts (UX Function)
+
+-Categories for each collection. (My Categories)
+-Users can subscribe to a category. (Clothing, toys, books, vinyls, comics, video games)
+ 
+-Notifications
+
+-Content Censure/Restrictions (User driven? Report Bad content?)
+
+-Dedicated Share Collection Component/Widget like YouTube (UX Function).
+
+-Similar/Related collections (workshop)?
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
