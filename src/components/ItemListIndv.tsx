@@ -37,12 +37,15 @@ export function ItemListIndv (props: ItemListProps)  {
     return (
         <> 
 
-        {items && items.length > 0 && (
-                <p>Items List:</p>
-                {items.map((item) =>
-                   <span key = {item.id}>{item.name}</span>
+        {items && (items.length > 0) && (
+            <div>
+            <p>Items List:</p>
+            {items.map((item) => (
+                <p key = {item.id}>{item.name}</p>  
+            ))}
+            </div>
         )}
-        )}       
+        
                     
         </>           
     );
