@@ -1,0 +1,49 @@
+{
+    "collections": [
+        {
+                "id": 1,
+                "name": "Collection 1",
+                "description": "Description for Collection 1",
+                "userId": 1,
+                "items": [
+                {
+                "id": 1,
+                "collectionId": 1,
+                "name": "Item 1",
+                "description": "Description for Item 1"
+                }
+            ]
+        },
+        {
+        "id": 2,
+        "name": "Collection 2",
+        "description": "Description for Collection 2",
+        "userId": 2,
+        "items": [
+            {
+                "id": 2,
+                "collectionId": 2,
+                "name": "Item 2",
+                "description": "Description for Item 2"
+            }
+        ]
+        },
+        {
+        "id": 3,
+        "name": "Collection 3",
+        "description": "Description for Collection 3",
+        "userId": 3
+        },
+        {"id": 4,
+        "name": "Collection 4",
+        "description": "Description for Collection 4",
+        "userId": 4
+        },
+        {
+        "id": 5,
+        "name": "Collection 5",
+        "description": "Description for Collection 5",
+        "userId": 5
+        }
+    ]
+}
