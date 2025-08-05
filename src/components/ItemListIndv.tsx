@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchItems, fetchItemsByCollectionId } from '../services/CollectionService'; 
 //import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'; 
-import  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
+//  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
 import type { Item } from '../models/Item'; // Assuming you have an Item model defined
 
 interface ItemListProps { 
@@ -31,8 +31,6 @@ export function ItemListIndv (props: ItemListProps)  {
         
         getItems();
     }, []);
-// pull up list of things we need to do for the front end.
-// verify my github on this machine. 
 
     return (
         <> 
@@ -44,9 +42,7 @@ export function ItemListIndv (props: ItemListProps)  {
                 <p key = {item.id}>{item.name}</p>  
             ))}
             </div>
-        )}
-        
-                    
+        )}          
         </>           
     );
 }

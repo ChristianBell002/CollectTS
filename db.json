@@ -28,6 +28,11 @@
         "name": "Collection 5",
         "description": "Description for Collection 5",
         "userId": 5
+        },
+        {        "id": 6,
+        "name": "Collection 6",
+        "description": "Description for Collection 6",
+        "userId": 6
         }
     ],
     "items":[

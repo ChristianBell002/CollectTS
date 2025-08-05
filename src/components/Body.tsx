@@ -1,6 +1,6 @@
 import { CollectionCard } from "./CollectionCard.tsx";
 import {fetchCollections}  from '../services/CollectionService.tsx';
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Body = () => {
 
@@ -19,6 +19,8 @@ export const Body = () => {
 
         getCollections();
     }, []);
+
+
     //console.log("Fetched collections data", collections);
    
     // might have to add a parameter to the collectionCard to receive the collection data.
@@ -35,13 +37,14 @@ export const Body = () => {
                 <div className = "collection-card-container">
                     {collections.length > 0 ? (
                         collections.map((collection) => (
-                            <CollectionCard collection = {collection} />
+                            <CollectionCard collection = {collection}/>
                         ))
                     ) : (
                         <p>No collections available</p>
                     )}
                 </div>
             </div>
+            
         </>
     )
 }

@@ -33,10 +33,15 @@ export function ItemList ()  {
 
     return (
         <>
+        <div>
+            <button className = "back-button-div" onClick={() => window.history.back()}>Back</button>
+        </div>
         
         <h1 className = "item-header">Item List
             <button className = "add-button">Add</button>
         </h1>
+
+
         
             <div className="item-list-container">
                 <div className = "item-list">

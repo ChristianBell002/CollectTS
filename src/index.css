@@ -1,9 +1,11 @@
 html, body{
   margin: 10px;
   padding: 0px;
+  flex: 1;
   font-family: 'Arial', sans-serif;
   color: #000000;
   background-color: #f5f3f3;
+  height: 100%;
 }
 
 .root{
@@ -13,6 +15,12 @@ html, body{
   justify-content: center;
   height: 100vh;
   background-color: #282c34; /* Dark background 282c34 */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -30,6 +38,20 @@ html, body{
   
 } 
 
+.footer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  bottom: 0;
+  height: 100px;
+  background-color: #261b17; /* Darker background 1a1a1a */
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .welcome-message{
   display: flex;
   top: 50px;
@@ -44,10 +66,10 @@ html, body{
 .nav-title{
   display: flex;
   align-items: left;
-  margin-top: 1em; 
-  margin-left: 1em;
-  left: 0;
-  height: 100%;
+  margin: 0;
+  top: 25px;
+  left: 25px;
+  height: 66%;
   font-size: 24px;
   color: #ffffff;
   position: absolute;
@@ -62,6 +84,7 @@ html, body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
   height: calc(1/4 * 100vh);
   margin-top: 1em;
 }
@@ -71,8 +94,8 @@ html, body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px; /* Width of the card (was 300 in case we want to revert it back */ 
-  height: 400px; /* Height of the card (was 268 in case we want to revert */;
+  width: 320px; /* Width of the card (was 300 in case we want to revert it back */ 
+  height: 320px; /* Height of the card (was 268 in case we want to revert */;
   background-color: #f6f4f4;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -86,7 +109,7 @@ html, body{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 100vw; /* Max width was 1200px  */
   flex-wrap: wrap;
 }
 
@@ -97,6 +120,13 @@ html, body{
 .collection-card:hover{
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(37, 21, 6, 0.5);
+}
+
+.collection-card-image{
+  width: 80%;
+  height: 20rcap; /* Adjusted height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 5px;
 }
 
 .view-button{
@@ -172,6 +202,31 @@ html, body{
 .add-button:active{
   background-color: #4f3f3a; /* Even darker on active */
 }
+
+.back-button-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  min-height: 30px;
+  background-color: #261b17; /* Darker background e7e3e2 */
+  color: #f8f8f8;
+  top: 100px;
+  position: relative;
+  border: none; 
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.back-button-div:hover{
+  background-color: #3c2d28; /* Slightly darker on hover */
+  cursor: pointer;
+}
+.back-button-div:active{
+  background-color: #4f3f3a; /* Even darker on active */
+}
+
 
 .error-page{
   display: flex;
