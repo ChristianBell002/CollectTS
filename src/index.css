@@ -114,9 +114,21 @@ html, body{
   flex-wrap: wrap;
 }
 
+.collection-card-header-div{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
 .collection-card-header{
   align-items: center;
   justify-content: center;
+  margin: 0;
+  flex: 1;
 }
 .collection-card:hover{
   cursor: pointer;
@@ -125,7 +137,7 @@ html, body{
 
 .collection-card-image{
   width: 80%;
-  height: 20rcap; /* Adjusted height for the image */
+  height: 40%; /* Adjusted height for the image */
   object-fit: cover; /* Ensures the image covers the area without distortion */
   border-radius: 5px;
 }
@@ -228,6 +240,13 @@ html, body{
 .back-button-div:active{
   background-color: #4f3f3a; /* Even darker on active */
 }
+
+.favorite-button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 8px;
+  }
 
 .error-page{
   display: flex;
