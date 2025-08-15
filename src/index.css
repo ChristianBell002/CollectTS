@@ -45,6 +45,7 @@ html, body{
   align-items: center;
   justify-content: center;
   width: 100lvw;
+  margin-top: auto;
   position: relative;
   bottom: 0;
   color: white;
@@ -245,7 +246,7 @@ html, body{
     position: absolute;
     right: 0;
     top: 0;
-    margin: 8px;
+    margin: 8px; /* Margin of 8 pixels all around to ensure even spacing */
   }
 
 .error-page{

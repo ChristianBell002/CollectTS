@@ -4,5 +4,5 @@ export interface Collection {
     description: string;
     userId: number;
     imageUrl: string;
-    isFavorite?: boolean; // Optional property to indicate if the collection is a favorite
+    isFavorite: boolean; // Optional property to indicate if the collection is a favorite
 }

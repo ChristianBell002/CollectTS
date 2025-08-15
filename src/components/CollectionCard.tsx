@@ -2,7 +2,6 @@ import React, {useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Collection } from '../models/Collection';
 import { ItemListIndv } from './ItemListIndv';
-import mario from '../assets/mario_sad.jpg'; // Assuming you have an image file in the assets folder
 import { FavoriteButton } from './FavoriteButton';
 
 
@@ -26,7 +25,7 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({collection}) => {
             <div className='collection-card-header-div'>
                 {/* <ItemListIndv collectionId={collection.id} /> */}
                 <h2 className = "collection-card-header">{collection.name} </h2>
-                <FavoriteButton /> 
+                <FavoriteButton isFavorite={collection.isFavorite} />
             </div>
             <img src={collection.imageUrl} alt={collection.name} className="collection-card-image" />
             <p>{collection.description}</p>

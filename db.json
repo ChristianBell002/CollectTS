@@ -5,7 +5,8 @@
         "name": "Collection 1",
         "description": "Description for Collection 1",
         "userId": 1,
-        "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA="
+        "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA=",
+        "isFavorite": false
         },
         {
         "id": 2,
@@ -20,26 +21,30 @@
         "name": "Collection 3",
         "description": "Description for Collection 3",
         "userId": 3,
-        "imageUrl": "https://media.istockphoto.com/id/1147547616/photo/sunrise-in-the-mountains.jpg?s=612x612&w=0&k=20&c=Yk9bX4YI3nU1H3jv5rX2Z5cXo1gkJH9yYk7hE3m0k0="
+        "imageUrl": "https://media.istockphoto.com/id/1147547616/photo/sunrise-in-the-mountains.jpg?s=612x612&w=0&k=20&c=Yk9bX4YI3nU1H3jv5rX2Z5cXo1gkJH9yYk7hE3m0k0=",
+        "isFavorite": false
         },
         {"id": 4,
         "name": "Collection 4",
         "description": "Description for Collection 4",
         "userId": 4,
-        "imageUrl": "https://media.istockphoto.com/id/495508534/photo/aerial-view-on-spacious-pine-forest-at-sunrise.jpg?s=612x612&w=0&k=20&c=NUGzlDoCT9JzRtZW3Z8fGIImOZZhA4bBSHiTKQgHJHU="
+        "imageUrl": "https://media.istockphoto.com/id/495508534/photo/aerial-view-on-spacious-pine-forest-at-sunrise.jpg?s=612x612&w=0&k=20&c=NUGzlDoCT9JzRtZW3Z8fGIImOZZhA4bBSHiTKQgHJHU=",
+        "isFavorite": false
         },
         {
         "id": 5,
         "name": "Collection 5",
         "description": "Description for Collection 5",
         "userId": 5,
-        "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA="
+        "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA=",
+        "isFavorite": false
         },
         {        "id": 6,
         "name": "Collection 6",
         "description": "Description for Collection 6",
         "userId": 6,
-        "imageUrl": "https://media.istockphoto.com/id/1147547616/photo/sunrise-in-the-mountains.jpg?s=612x612&w=0&k=20&c=Yk9bX4YI3nU1H3jv5rX2Z5cXo1gkJH9yYk7hE3m0k0="
+        "imageUrl": "https://media.istockphoto.com/id/1147547616/photo/sunrise-in-the-mountains.jpg?s=612x612&w=0&k=20&c=Yk9bX4YI3nU1H3jv5rX2Z5cXo1gkJH9yYk7hE3m0k0=",
+        "isFavorite": false
         
         }
     ],
