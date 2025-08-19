@@ -53,31 +53,36 @@
             "id": 1,
             "collectionId": 1,
             "name": "Item 1",
-            "description": "Description for Item 1"
+            "description": "Description for Item 1",
+            "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA="
         },
         {
             "id": 2,
             "collectionId": 2,
             "name": "Item 2",
-            "description": "Description for Item 2"
+            "description": "Description for Item 2",
+            "imageUrl": "https://example.com/item2.jpg"
         },
         {
             "id": 3,
             "collectionId": 3,
             "name": "Item 3",
-            "description": "Description for Item 3"
+            "description": "Description for Item 3",
+            "imageUrl": "https://example.com/item3.jpg"
         },
         {
             "id": 4,
             "collectionId": 4,
             "name": "Item 4",
-            "description": "Description for Item 4"
+            "description": "Description for Item 4",
+            "imageUrl":"https://example.com/item3.jpg"
         },
         {
             "id": 5,
             "collectionId": 1,
             "name": "Item 5",
-            "description": "Description for Item 5"
+            "description": "Description for Item 5",
+            "imageUrl":"https://example.com/item2.jpg"
         }
     ]
 }

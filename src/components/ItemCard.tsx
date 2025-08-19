@@ -13,8 +13,10 @@ export default function ItemCard (props: ItemCardProps){ // might add a collecti
     return (
         <>
             <div className = "collection-card">
-                <h2 className = "collection-card-header">{props.item.name}</h2>
+                <h2 className = "item-card-header">{props.item.name}</h2>
+                <img src={props.item.imageUrl} alt={props.item.name} className="item-card-image" />
                 <p>{props.item.description}</p>
+                
                 {/* <p>Uploaded by: {props.item.collection.userId}</p> */}
             </div>
         </>

@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 import  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
 
 interface ItemListProps {
-    
     collectionId: number; // The ID of the collection to fetch items for
 }
 
