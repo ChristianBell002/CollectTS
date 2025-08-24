@@ -39,13 +39,13 @@
         "imageUrl": "https://media.istockphoto.com/id/483724081/photo/yosemite-valley-landscape-and-river-california.jpg?s=2048x2048&w=is&k=20&c=j0OSpP2sAz582wDP0t28BzmwSMb0BJ2li7koJ2yROcA=",
         "isFavorite": false
         },
-        {        "id": 6,
+        {        
+        "id": 6,
         "name": "Collection 6",
         "description": "Description for Collection 6",
         "userId": 6,
         "imageUrl": "https://media.istockphoto.com/id/1147547616/photo/sunrise-in-the-mountains.jpg?s=612x612&w=0&k=20&c=Yk9bX4YI3nU1H3jv5rX2Z5cXo1gkJH9yYk7hE3m0k0=",
         "isFavorite": false
-        
         }
     ],
     "items":[
@@ -83,6 +83,45 @@
             "name": "Item 5",
             "description": "Description for Item 5",
             "imageUrl":"https://example.com/item2.jpg"
+        }
+    ],
+
+    "users": [
+        {
+            "id": 1,
+            "name": "User 1",
+            "email": "user1@gmail.com",
+            "imageUrl": "https://example.com/user1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "User 2",
+            "email": "user2@gmail.com",
+            "imageUrl": "https://example.com/user2.jpg"
+        }
+    ],
+
+    "comments": [
+        {
+            "id": 1,
+            "collectionId": 1,
+            "userId": 2,
+            "text": "Great collection!",
+            "timestamp": "2023-10-01T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "collectionId": 1,
+            "userId": 3,
+            "text": "I love these items.",
+            "timestamp": "2023-10-02T12:30:00Z"
+        },
+        {
+            "id": 3,
+            "collectionId": 2,
+            "userId": 1,
+            "text": "Amazing collection!",
+            "timestamp": "2023-10-03T14:45:00Z"
         }
     ]
 }

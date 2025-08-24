@@ -100,6 +100,36 @@ html, body{
   cursor: pointer;
 }
 
+.signup-button{
+  display: flex;
+  align-items: right;
+  flex-direction: row;
+  margin: 0;
+  right: 10vw;
+  top: 45%;
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.login-button{
+  display: flex;
+  align-items: right;
+  flex-direction: row;
+  margin: 0;
+  right: 6vw;
+  top: 45%;
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
 .default-collection{
   display: flex;
   flex-direction: column;
@@ -275,6 +305,65 @@ html, body{
 }
 .back-button-div:active{
   background-color: #4f3f3a; /* Even darker on active */
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 3em;
+  width: 100%;
+  height: calc(100vh/3); /* Adjusted to account for the header height */
+  position: relative;
+}
+
+.login-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #200f0f;
+  font-size: 24px;
+  position: relative;
+}
+.login-submit-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  min-height: 30px;
+  background-color: #261b17; /* Darker background e7e3e2 */
+  color: #f8f8f8;
+  margin-top: 1em;
+  margin-left: 3em;
+  border: none; 
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-submit-button:hover{
+  background-color: #3c2d28; /* Slightly lighter on hover */
+}
+
+.login-div{
+  align-items: center;
+  justify-content: center;
+}
+
+.login-input{
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  align-items: center;
 }
 
 .favorite-button{
