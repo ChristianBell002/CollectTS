@@ -13,10 +13,14 @@ export const Header = () => {
     return (
         <>
         <div className="header">
-            <h1 className = "nav-title" onClick={handleHome}>ViewCollect</h1>
-            <p className = "categories-button">My Categories</p>
-            <p className = "login-button" onClick = {handleLogin}>Login</p>
-            <p className = "signup-button">Register</p>
+            <div className = "left-header">
+                <h1 className = "nav-title" onClick={handleHome}>ViewCollect</h1>
+                <button className = "categories-button">My Categories</button>
+            </div>
+            <div className = "right-header">
+                <button className = "header-button" onClick = {handleLogin}>Login</button>
+                <button className = "header-button">Register</button>
+            </div>
         </div>
         </>
     )

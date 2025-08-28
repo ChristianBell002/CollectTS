@@ -1,14 +1,15 @@
 html, body{
-  margin: 10px;
+  margin: 0px;
   padding: 0px;
-  flex: 1;
   font-family: 'Roboto', sans-serif;
   color: #000000;
   background-color: #f5f3f3;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.root{
+.root {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,46 +27,40 @@ html, body{
 
 .header {
   display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 75px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 70px;
   background-color: #261b17; /* Darker background 1a1a1a */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   user-select: none;
 } 
 
-.categories-button{
-  display: flex;
-  align-items: left;
-  flex-direction: row;
-  margin: 0;
-  left: 12vw;
-  top: 45%;
+.categories-button {
   font-size: 14px;
   color: #ffffff;
-  position: absolute;
+  background-color: #261b17;
   user-select: none;
+  border: none;
   z-index: 1000;
 }
 
-.categories-button:hover{
+.categories-button:hover {
   cursor: pointer;
 }
 
 .footer {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100lvw;
+  width: 100%;
   margin-top: auto;
   position: relative;
-  bottom: 0;
   color: white;
   height: 100px;
   background-color: #261b17; /* Darker background 1a1a1a */
@@ -87,47 +82,41 @@ html, body{
   display: flex;
   align-items: left;
   margin: 0;
-  top: 25px;
-  left: 25px;
-  height: 66%;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #ffffff;
-  position: absolute;
   user-select: none;
+  font-weight: bold;
 }
 
 .nav-title:hover{
   cursor: pointer;
 }
 
-.signup-button{
+.header-button{
   display: flex;
-  align-items: right;
-  flex-direction: row;
   margin: 0;
-  right: 10vw;
-  top: 45%;
   font-size: 14px;
   color: #ffffff;
-  position: absolute;
+  background-color: #261b17;
   user-select: none;
   cursor: pointer;
+  border: none;
   z-index: 1000;
 }
 
-.login-button{
+.left-header{
   display: flex;
-  align-items: right;
-  flex-direction: row;
-  margin: 0;
-  right: 6vw;
-  top: 45%;
-  font-size: 14px;
-  color: #ffffff;
-  position: absolute;
-  user-select: none;
-  cursor: pointer;
-  z-index: 1000;
+  gap: 1.5em;
+  padding-left: 1.5em;
+  flex-shrink: 1;
+}
+
+.right-header{
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  padding-right: 1.5em;
+  flex-shrink: 1;
 }
 
 .default-collection{
@@ -139,6 +128,31 @@ html, body{
   margin-top: 1em;
 }
 
+.card-wrap{
+  position: relative;
+  display: inline-block;
+}
+
+.card-wrap::before{
+  content: "";
+  position: absolute;
+  width: 325px;
+  height: 325px;
+  translate: 7.55% 7.55%;
+  padding: 11px;
+  border-radius: 10px; 
+  z-index: 0; /* Behind the card content */
+  opacity: 0;
+  background-image: conic-gradient(from var(--angle), transparent 90%,#36a4c0, transparent 90%, #36a4c0); /* #298ba3 */
+  pointer-events: none;
+   /* Ensures it doesn't interfere with hover */
+}
+
+.card-wrap:hover::before{
+  opacity: 1;
+  animation: spin 4s linear infinite;
+}
+
 .collection-card{
   display: flex;
   flex-direction: column;
@@ -148,10 +162,26 @@ html, body{
   height: 320px; /* Height of the card (was 268 in case we want to revert */;
   background-color: #f6f4f4;
   border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 30px;
   padding: 10px;
   text-align: center;
+  position: relative; /* For the ::after pseudo-element */
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
 }
 
 .collection-card-container{
@@ -181,7 +211,8 @@ html, body{
 }
 .collection-card:hover{
   cursor: pointer;
-  box-shadow: 0px 4px 10px rgba(48, 27, 7, 0.6); /* 37 21 6 0.5*/
+  /* box-shadow: 0px 4px 10px rgba(48, 27, 7, 0.6); 37 21 6 0.5 */
+  animation: spin 3s linear infinite;
   /* NOTE: WANT TO ADD A CONIC GRADIENT THAT SPINS */
 }
 

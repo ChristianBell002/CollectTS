@@ -21,18 +21,20 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({collection}) => {
     
     return (
         <>
-        <div className = "collection-card" onClick = {handleViewCollection}>
-            <div className='collection-card-header-div'>
-                {/* <ItemListIndv collectionId={collection.id} /> */}
-                <h2 className = "collection-card-header">{collection.name} </h2>
-                <FavoriteButton isFavorite={collection.isFavorite} />
+            <div className = "card-wrap">
+                <div className = "collection-card" onClick = {handleViewCollection}>
+                    <div className='collection-card-header-div'>
+                        {/* <ItemListIndv collectionId={collection.id} /> */}
+                        <h2 className = "collection-card-header">{collection.name} </h2>
+                        <FavoriteButton isFavorite={collection.isFavorite} />
+                    </div>
+                    <img src={collection.imageUrl} alt={collection.name} className="collection-card-image" />
+                    <p>{collection.description}</p>
+                    <p>Created by: {collection.userId}</p>
+                    <p>Collection ID: {collection.id}</p>
+                    {/* <button className="view-button" onClick={handleViewCollection}>View Items</button> */}
+                </div>
             </div>
-            <img src={collection.imageUrl} alt={collection.name} className="collection-card-image" />
-            <p>{collection.description}</p>
-            <p>Created by: {collection.userId}</p>
-            <p>Collection ID: {collection.id}</p>
-            {/* <button className="view-button" onClick={handleViewCollection}>View Items</button> */}
-        </div>
         </>
     );
 }
