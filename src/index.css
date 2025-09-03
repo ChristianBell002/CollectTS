@@ -143,9 +143,8 @@ html, body{
   border-radius: 10px; 
   z-index: 0; /* Behind the card content */
   opacity: 0;
-  background-image: conic-gradient(from var(--angle), transparent 90%,#36a4c0, transparent 90%, #36a4c0); /* #298ba3 */
+  background-image: conic-gradient(from var(--angle), transparent 80%,#36a4c0, transparent 80%, #36a4c0); /* #298ba3 */
   pointer-events: none;
-   /* Ensures it doesn't interfere with hover */
 }
 
 .card-wrap:hover::before{
@@ -211,9 +210,7 @@ html, body{
 }
 .collection-card:hover{
   cursor: pointer;
-  /* box-shadow: 0px 4px 10px rgba(48, 27, 7, 0.6); 37 21 6 0.5 */
-  animation: spin 3s linear infinite;
-  /* NOTE: WANT TO ADD A CONIC GRADIENT THAT SPINS */
+  box-shadow: 0px 4px 10px rgba(17, 62, 70, 0.6); /*37 21 6 0.5 */
 }
 
 .collection-card-image{

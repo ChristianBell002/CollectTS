@@ -1,4 +1,5 @@
 import { CollectionCard } from "./CollectionCard.tsx";
+import {Card} from "./shared/Card.tsx";
 import {fetchCollections}  from '../services/CollectionService.tsx';
 import { useEffect, useState } from "react";
 
@@ -43,6 +44,10 @@ export const Body = () => {
                         <p>No collections available</p>
                     )}
                 </div>
+            </div>
+
+            <div>
+                <Card id={1} title={"Collection 1"} buttonVisible = {true}/>
             </div>
             
         </>

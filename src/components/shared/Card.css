@@ -1,0 +1,92 @@
+.generic-card-wrap{
+  position: relative;
+  display: inline-block;
+}
+
+.generic-card-wrap::before{
+  content: "";
+  position: absolute;
+  width: 325px;
+  height: 325px;
+  translate: 7.55% 7.55%;
+  padding: 11px;
+  border-radius: 10px; 
+  z-index: 0; /* Behind the card content */
+  opacity: 0;
+  background-image: conic-gradient(from var(--angle), transparent 80%,#c0ab36);/* #298ba3 */
+  pointer-events: none;
+}
+
+.generic-card-wrap:hover::before{
+  opacity: 1;
+  animation: spin 4s linear infinite;
+}
+
+.generic-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px; /* Width of the card (was 300 in case we want to revert it back */ 
+  height: 320px; /* Height of the card (was 268 in case we want to revert */;
+  background-color: #f6f4f4;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+  padding: 10px;
+  text-align: center;
+  position: relative; /* For the ::after pseudo-element */
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+.generic-card-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw; /* Max width was 1200px  */
+  flex-wrap: wrap;
+}
+
+.generic-card-header-div{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.generic-card-header{
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex: 1;
+}
+.generic-card:hover{
+  cursor: pointer;
+   box-shadow: 0px 4px 10px rgba(48, 27, 7, 0.6); /*37 21 6 0.5 */
+  /* NOTE: WANT TO ADD A CONIC GRADIENT THAT SPINS */
+}
+
+.generic-card-image{
+  width: 80%;
+  height: 40%; /* Adjusted height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 5px;
+}
