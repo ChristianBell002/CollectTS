@@ -6,18 +6,17 @@ import { useParams } from 'react-router-dom';
 import  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
 
 interface ItemListProps {
+    itemId: number;
     collectionId: number; // The ID of the collection to fetch items for
 }
 
 export function ItemList ()  {
     const {collectionId} = useParams(); // Get the collection ID from the URL parameters
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const getItems = async () => {
-            //console.log("Fetching items for collection ID:", props.collectionId);
-            //const data = await fetchItemsByCollectionId(parseInt(id || '') || 1); // Fetch items for the specified collection ID
             const data = await fetchItemsByCollectionId(collectionId ? parseInt(collectionId) : 1); // Fetch items for the specified collection ID
             console.log("Fetched items:", data);
             if (data) {
@@ -32,28 +31,26 @@ export function ItemList ()  {
 
     return (
         <>
-        <div>
-            <button className = "back-button-div" onClick={() => window.history.back()}>Back</button>
-        </div>
-        
-        <h1 className = "item-header">Item List
-            <button className = "add-button">Add</button>
-        </h1>
-
-
-        
-            <div className="item-list-container">
-                <div className = "item-list">
-                    {items.length > 0 ? (
-                        items.map((item) => (
-                        <ItemCard item={item} />  
-                        ))
-                    ) : (
-                        <p>No items available</p>
-                    )}
-                    {error && <p className="error-message">{error}</p>}                    
-                </div>
+            <div>
+                <button className = "back-button-div" onClick={() => window.history.back()}>Back</button>
             </div>
+            
+            <h1 className = "item-header">Item List
+                <button className = "add-button">Add</button>
+            </h1>
+            
+                <div className="item-list-container">
+                    <div className = "item-list">
+                        {items.length > 0 ? (
+                            items.map((item) => (
+                            <ItemCard key = {item.id} item={item} />  
+                            ))
+                        ) : (
+                            <p>No items available</p>
+                        )}
+                        {error && <p className="error-message">{error}</p>}                    
+                    </div>
+                </div>
         </>
     );
 }

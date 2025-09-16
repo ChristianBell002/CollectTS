@@ -2,11 +2,20 @@ import { CollectionCard } from "./CollectionCard.tsx";
 import {Card} from "./shared/Card.tsx";
 import {fetchCollections}  from '../services/CollectionService.tsx';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import type { Collection } from "../models/Collection.tsx";
 
 export const Body = () => {
 
-    const [collections, setCollections] = useState([]);
+    const [collections, setCollections] = useState<any[]>([]); // had to change to any[] to avoid type 'never' error https://stackoverflow.com/questions/44147937/property-does-not-exist-on-type-never 
     const [error, setError] = useState<string | null>(null); 
+
+    const navigate = useNavigate();
+
+    const ItemListHandler = (collectionID: number) => {
+        navigate(`/ItemList/${collectionID}`);    
+    }
+
 
     useEffect(() => {
             const getCollections = async () => {
@@ -22,10 +31,6 @@ export const Body = () => {
     }, []);
 
 
-    //console.log("Fetched collections data", collections);
-   
-    // might have to add a parameter to the collectionCard to receive the collection data.
-    // it will return as a list of collection objects.
     return (
         <>
             <div className="welcome-message">
@@ -38,18 +43,13 @@ export const Body = () => {
                 <div className = "collection-card-container">
                     {collections.length > 0 ? (
                         collections.map((collection) => (
-                            <CollectionCard collection = {collection}/>
+                            <Card key={collection.id} title={collection.name} id = {collection.id} buttonVisible={collection.isFavorite} text1={collection.description} imageUrl={collection.imageUrl} onClick={() => ItemListHandler(collection.id)}/>
                         ))
                     ) : (
-                        <p>No collections available</p>
-                    )}
+                        <p>No collections available.</p>
+                    )}  
                 </div>
-            </div>
-
-            <div>
-                <Card id={1} title={"Collection 1"} buttonVisible = {true}/>
-            </div>
-            
+        </div>
         </>
     )
 }

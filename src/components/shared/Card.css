@@ -13,7 +13,7 @@
   border-radius: 10px; 
   z-index: 0; /* Behind the card content */
   opacity: 0;
-  background-image: conic-gradient(from var(--angle), transparent 80%,#c0ab36);/* #298ba3 */
+  background-image: conic-gradient(from var(--angle), transparent 80%,#36a4c0);/* #298ba3 */
   pointer-events: none;
 }
 

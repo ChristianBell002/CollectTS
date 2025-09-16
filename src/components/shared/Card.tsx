@@ -14,6 +14,7 @@ interface CardProps{
     text3?: string; // desc is optional
     imageUrl?: string; // users can choose to not upload an image
     buttonVisible: boolean; // users can choose to not have a button
+    onClick?: () => void; // optional onClick handler
 }
 
 export const Card = (CardProps: CardProps) => { // might add a collection prop to pass each collection object to an individual instance of the collection card.
@@ -28,7 +29,7 @@ export const Card = (CardProps: CardProps) => { // might add a collection prop t
     return (
         <>
             <div className = "generic-card-wrap">
-                <div className = "generic-card">
+                <div className = "generic-card" onClick={CardProps.onClick}>
                     <div className='generic-card-header-div'>
                         <h2 className = "generic-card-header">{CardProps.title} </h2>
                         <FavoriteButton isFavorite={CardProps.buttonVisible} />
