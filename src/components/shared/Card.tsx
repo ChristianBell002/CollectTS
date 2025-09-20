@@ -19,19 +19,13 @@ interface CardProps{
 
 export const Card = (CardProps: CardProps) => { // might add a collection prop to pass each collection object to an individual instance of the collection card.
 
-    //const navigate = useNavigate();
-
-    // const handleViewCollection = () => {onClick = {handleViewCollection}
-        //console.log("Navigating to collection ID:", collection.id);
-        //navigate(`/ItemList/${CardProps.id}`); // Navigate to the ItemList page with the collection ID
-    //};
-    
     return (
         <>
             <div className = "generic-card-wrap">
                 <div className = "generic-card" onClick={CardProps.onClick}>
                     <div className='generic-card-header-div'>
                         <h2 className = "generic-card-header">{CardProps.title} </h2>
+                 
                         <FavoriteButton isFavorite={CardProps.buttonVisible} />
                     </div>
                     <img src={CardProps.imageUrl} alt={CardProps.title} className="generic-card-image" />

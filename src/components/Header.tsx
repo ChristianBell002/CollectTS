@@ -9,6 +9,9 @@ export const Header = () => {
     const handleLogin = () => {
         navigate('/login');
     }
+    const handleRegister = () => {
+        navigate('/profile');
+    }
     
     return (
         <>
@@ -19,7 +22,7 @@ export const Header = () => {
             </div>
             <div className = "right-header">
                 <button className = "header-button" onClick = {handleLogin}>Login</button>
-                <button className = "header-button">Register</button>
+                <button className = "header-button" onClick = {handleRegister}>Register</button>
             </div>
         </div>
         </>

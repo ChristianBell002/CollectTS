@@ -4,6 +4,7 @@ import { fetchItems, fetchItemsByCollectionId } from '../services/CollectionServ
 //import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'; 
 import  ItemCard  from './ItemCard'; // Assuming you have an ItemCard component to display each item
+import { Card } from './shared/Card';
 
 interface ItemListProps {
     itemId: number;
@@ -43,7 +44,7 @@ export function ItemList ()  {
                     <div className = "item-list">
                         {items.length > 0 ? (
                             items.map((item) => (
-                            <ItemCard key = {item.id} item={item} />  
+                            <Card key = {item.id} id= {item.id} title={item.name} buttonVisible={false} imageUrl={item.imageUrl}/>  
                             ))
                         ) : (
                             <p>No items available</p>

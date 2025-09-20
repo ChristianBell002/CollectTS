@@ -1,0 +1,64 @@
+.user-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color:rgb(221, 226, 231);
+    flex-shrink: 1;
+}
+
+.user-page-header{
+    font-size: 2.5rem;
+    margin-top: 10vh;
+    margin-bottom: 1vh;
+}
+
+.user-profile-container{
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+    align-items: center;
+    background-color: #e4e4e4;
+    margin: 20px 0 0 0;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.user-container-header{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.user-input{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.user-submit-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    min-height: 30px;
+    background-color: #171c26; /* Darker background e7e3e2 */
+    color: #f8f8f8;
+    margin-top: 20px;
+    border: none; 
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.user-submit-button:hover{
+    background-color: #212836; /* Slightly lighter on hover */
+}
