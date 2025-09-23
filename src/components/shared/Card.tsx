@@ -14,6 +14,7 @@ interface CardProps{
     text3?: string; // desc is optional
     imageUrl?: string; // users can choose to not upload an image
     buttonVisible: boolean; // users can choose to not have a button
+    isFavorite?: boolean; // not all cards will need a favorite button since some cards won't be collections.
     onClick?: () => void; // optional onClick handler
 }
 
@@ -25,8 +26,9 @@ export const Card = (CardProps: CardProps) => { // might add a collection prop t
                 <div className = "generic-card" onClick={CardProps.onClick}>
                     <div className='generic-card-header-div'>
                         <h2 className = "generic-card-header">{CardProps.title} </h2>
-                 
-                        <FavoriteButton isFavorite={CardProps.buttonVisible} />
+                        {CardProps.buttonVisible ? (<FavoriteButton isFavorite={CardProps.isFavorite ?? false} />
+                        ) : null
+                            }
                     </div>
                     <img src={CardProps.imageUrl} alt={CardProps.title} className="generic-card-image" />
                     <p>{CardProps.text1}</p>

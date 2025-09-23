@@ -11,6 +11,7 @@ export const Body = () => {
     const [error, setError] = useState<string | null>(null); 
 
     const navigate = useNavigate();
+    const collectionToggle = true; // always true since collections will always display a favorite button.
 
     const ItemListHandler = (collectionID: number) => {
         navigate(`/ItemList/${collectionID}`);    
@@ -43,7 +44,7 @@ export const Body = () => {
                 <div className = "collection-card-container">
                     {collections.length > 0 ? (
                         collections.map((collection) => (
-                            <Card key={collection.id} title={collection.name} id = {collection.id} buttonVisible={collection.isFavorite} text1={collection.description} imageUrl={collection.imageUrl} onClick={() => ItemListHandler(collection.id)}/>
+                            <Card key={collection.id} title={collection.name} id = {collection.id} isFavorite = {collection.isFavorite}buttonVisible={collectionToggle} text1={collection.description} imageUrl={collection.imageUrl} onClick={() => ItemListHandler(collection.id)}/>
                         ))
                     ) : (
                         <p>No collections available.</p>
