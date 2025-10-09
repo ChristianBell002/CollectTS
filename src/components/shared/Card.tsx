@@ -1,6 +1,8 @@
 import React, {useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Collection } from '../../models/Collection';
+import {useInView} from "react-intersection-observer";
+
 import { FavoriteButton } from '.././FavoriteButton';
 import './Card.css';
 
@@ -18,12 +20,21 @@ interface CardProps{
     onClick?: () => void; // optional onClick handler
 }
 
+ 
+
 export const Card = (CardProps: CardProps) => { // might add a collection prop to pass each collection object to an individual instance of the collection card.
+    
+    const {ref, inView} = useInView({
+            threshold: 0.1,
+            triggerOnce: true,
+    });
+
 
     return (
         <>
-            <div className = "generic-card-wrap">
-                <div className = "generic-card" onClick={CardProps.onClick}>
+            <div className = "generic-card-wrap"> 
+                {/* Need to implement in the above line for the wrapper. */}
+                <div ref={ref} className = {`generic-card ${inView ? "generic-card--show" : ""}`} onClick={CardProps.onClick}>
                     <div className='generic-card-header-div'>
                         <h2 className = "generic-card-header">{CardProps.title} </h2>
                         {CardProps.buttonVisible ? (<FavoriteButton isFavorite={CardProps.isFavorite ?? false} />

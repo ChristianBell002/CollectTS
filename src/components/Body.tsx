@@ -44,13 +44,16 @@ export const Body = () => {
                 <div className = "collection-card-container">
                     {collections.length > 0 ? (
                         collections.map((collection) => (
-                            <Card key={collection.id} title={collection.name} id = {collection.id} isFavorite = {collection.isFavorite}buttonVisible={collectionToggle} text1={collection.description} imageUrl={collection.imageUrl} onClick={() => ItemListHandler(collection.id)}/>
+                            <Card key={collection.id} title={collection.name} id = {collection.id} isFavorite = {collection.isFavorite} buttonVisible={collectionToggle} text1={collection.description} imageUrl={collection.imageUrl} onClick={() => ItemListHandler(collection.id)}/>
                         ))
-                    ) : (
+                    ) :
+                    
+                    (
+                        // I want to put a loading animation here.
                         <p>No collections available.</p>
                     )}  
                 </div>
-        </div>
+            </div>
         </>
     )
 }

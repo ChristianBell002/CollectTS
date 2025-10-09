@@ -19,16 +19,16 @@ export const UserPage = () => {
                 </div> */}
                 
                 <h1 className = "user-page-header">User Page</h1>
-                <p>This is a user page prototype that includes information about the user. </p>
+                <p>This is a user page prototype that includes information about the user.</p>
+
                 <div className ="user-profile-container">
                     <h2 className="user-container-header">User</h2>
                     <input type="text" className = "user-input" id="username" name="username" placeholder='Username' />
-                    <input type="text" className = "user-input" id="email" name="email" placeholder='Email' />
+                    <input type="email" className = "user-input" id="email" name="email" placeholder='Email' />
                     <input type="password" className = "user-input" id="password" name="password" placeholder='Password' />
                     <button className = "user-submit-button" type="submit">Update Profile</button>
                     {/* <button className = "user-submit-button"></button> */}
                 </div>
-                
             </div>
         </>
     );
