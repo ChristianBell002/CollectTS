@@ -1,3 +1,5 @@
+# This is the continuation of the "ViewsCollect" repo but with TypeScript support.
+
 Current Issues that need to be resolved. To be added later into GitHub issues:
 
 Frontend
